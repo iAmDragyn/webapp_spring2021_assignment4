@@ -50,5 +50,43 @@ module.exports = {
             .catch(error => {
                 res.send(error);
             })
+    },
+    validate: (req, res, next) => {
+        req.sanitizeBody("email").normalizeEmail({
+            all_lowercase: true
+        }).trim();
+
+        req.check("email", "Email is not valid!").isEmail();
+        req.check("zipCode", "Zip Code is not valid!").notEmpty().isInt().isLength({
+            min: 5,
+            max: 5
+        });
+        req.check("password", "Password cannot be empty!").notEmpty();
+
+        req.getValidationResult().then((error) => {
+            if (!error.isEmpty()) {
+                let messages = error.array().map(e => e.msg);
+                req.flash("error", messages.join(" and "));
+                req.skip = true;
+                // need to redirect to sign up modal somehow
+                // res.locals.redirect = "/users/new";
+                next();
+            }
+            else {
+                next();
+            }
+        });
+    },
+    authenticate: passport.authenticate("local", {
+        failureRedirect: "/index",
+        failureFlash: "Login failed! Check your email or password!",
+        successRedirect: "/",
+        successFlash: "Logged in!"
+    }),
+    logout: (req, res, next) => {
+        req.logout();
+        req.flash("success", "Successfully logged out!");
+        res.locals.redirect = "/";
+        next();
     }
 };
