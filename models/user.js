@@ -27,13 +27,25 @@ userSchema = new Schema({
     },
 
     // Maybe remove?
-    securityQuestion1: String,
-    securityAnswer1: String,
-    securityQuestion2: String,
-    securityAnswer2: String,
-    securityQuestion3: String,
-    securityAnswer3: String,
+    securityQuestion1: {
+        type: String,
     },
+    securityAnswer1: {
+        type: String,
+    },
+    securityQuestion2: {
+        type: String,
+    },
+    securityAnswer2: {
+        type: String,
+    },
+    securityQuestion3: {
+        type: String,
+    },
+    securityAnswer3: {
+        type: String,
+    }
+},
     {
         timestamps: true
     }

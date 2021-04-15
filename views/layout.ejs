@@ -2,7 +2,7 @@
 Some Code Sourced: 
 https://stackoverflow.com/questions/49943610/can-i-check-password-confirmation-in-bootstrap-4-with-default-validation-options 
 https://getbootstrap.com/docs/5.0/forms/validation/
---> 
+-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,47 +39,6 @@ https://getbootstrap.com/docs/5.0/forms/validation/
 
         <!-- Collapsible content -->
         <div class="collapse navbar-collapse" id="basicExampleNav">
-
-            <!-- Nav bar items -->
-            <ul class="nav navbar-nav ml-auto">
-                <!-- Search bar -->
-                <li class="nav-item">
-                    <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <!-- Please keep this version of the button just in case -->
-                        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-                        <a href="/search" class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search
-                        </a>
-                    </form>
-                </li>
-
-                <!-- LOG IN MODAL BUTTON -->
-                <li class="nav-item">
-                    <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                        data-target="#loginModal">Log In</button>
-                </li>
-
-                <!-- SIGN UP MODAL BUTTON -->
-                <li class="nav-item">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Sign
-                        Up</button>
-                </li>
-
-                <!-- DROP DOWN -->
-                <li class="nav-item dropdown">
-                    <button type="button" class="btn btn-outline-line dropdown-toggle dropdown-toggle-split"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="img/Blank_face.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="/account">Account</a>
-                        <a class="dropdown-item" href="/settings">Settings</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Sign Out</a>
-                    </div>
-                </li>
-            </ul>
         </div>
     </nav>
 
@@ -99,7 +58,7 @@ https://getbootstrap.com/docs/5.0/forms/validation/
                 <div class="modal-body text-center">
 
                     <!-- Log in form -->
-                    <form action="/home" method="post" class="needs-validation" novalidate>
+                    <form action="/" method="post" class="needs-validation" novalidate>
                         <!-- Form Styling-->
                         <img src="img/smile-svgrepo-com.svg" width="100" height="100" class="d-inline-block align-top"
                             alt="">
@@ -107,29 +66,32 @@ https://getbootstrap.com/docs/5.0/forms/validation/
 
                         <!-- Email -->
                         <div class="form-group">
-                            <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                            <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email"
+                                required>
                             <div class="invalid-feedback small-text">
                                 Please enter a valid email address.
                             </div>
                             <!-- Forgot Username -->
                             <div class="text-right small-text">
                                 <span class="forgot-username text-right">
-                                    <a href="index.html" title="Forgot Username" id="link-reset-username"> Forgot Username? </a>
+                                    <a href="index.html" title="Forgot Username" id="link-reset-username"> Forgot
+                                        Username? </a>
                                 </span> <br>
                             </div>
                         </div>
 
                         <!-- Password -->
                         <div class="form-group">
-                            <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password"
-                                required>
+                            <input type="password" name="password" class="form-control" id="inputPassword"
+                                placeholder="Password" required>
                             <div class="invalid-feedback small-text">
                                 Please enter a password.
                             </div>
                             <!-- Forgot Password -->
                             <div class="text-right small-text">
                                 <span class="forgot-password text-right">
-                                    <a href="index.html" title="Forgot Password" id="link-reset-password"> Forgot Password? </a>
+                                    <a href="index.html" title="Forgot Password" id="link-reset-password"> Forgot
+                                        Password? </a>
                                 </span> <br>
                             </div>
                         </div>
@@ -169,7 +131,9 @@ https://getbootstrap.com/docs/5.0/forms/validation/
                 <div class="modal-body text-center">
 
                     <!-- Sign Up form -->
-                    <form action="/" method="post" class="needs-validation" oninput='confirmPassword.setCustomValidity(confirmPassword.value != password.value ? "Passwords do not match." : "")' novalidate>
+                    <form action="/signup" method="post" class="needs-validation"
+                        oninput='confirmPassword.setCustomValidity(confirmPassword.value != password.value ? "Passwords do not match." : "")'
+                        novalidate>
 
                         <!-- Form Styling -->
                         <img src="img/happy-emoji-svgrepo-com.svg" width="100" height="100"
@@ -179,13 +143,15 @@ https://getbootstrap.com/docs/5.0/forms/validation/
                         <!-- ROW 1 FIRST/LAST/DoB -->
                         <div class="row">
                             <div class="col">
-                                <input type="text" name="firstName" class="form-control" placeholder="First name" required>
+                                <input type="text" name="firstName" class="form-control" placeholder="First name"
+                                    required>
                                 <div class="invalid-feedback small-text">
                                     Please enter a first name.
                                 </div>
                             </div>
                             <div class="col">
-                                <input type="text" name="lastName" class="form-control" placeholder="Last name" required>
+                                <input type="text" name="lastName" class="form-control" placeholder="Last name"
+                                    required>
                                 <div class="invalid-feedback small-text">
                                     Please enter a last name.
                                 </div>
@@ -217,8 +183,8 @@ https://getbootstrap.com/docs/5.0/forms/validation/
                         <!-- ROW 3 PASSWORDS -->
                         <div class="row" id="passwordDiv">
                             <div class="col">
-                                <input type="password" name="password" id="password-sign-up" class="form-control" placeholder="Password"
-                                    required>
+                                <input type="password" name="password" id="password-sign-up" class="form-control"
+                                    placeholder="Password" required>
                                 <div class="invalid-feedback small-text">
                                     Please enter your password.
                                 </div>
@@ -247,7 +213,8 @@ https://getbootstrap.com/docs/5.0/forms/validation/
                                     </option>
                                 </select>
                             </div>
-                            <input type="text" name="securityAnswer1" class="form-control" placeholder="Answer" required>
+                            <input type="text" name="securityAnswer1" class="form-control" placeholder="Answer"
+                                required>
                             <div class="invalid-feedback small-text">
                                 Please choose and answer this security question.
                             </div>
@@ -266,7 +233,8 @@ https://getbootstrap.com/docs/5.0/forms/validation/
                                     </option>
                                 </select>
                             </div>
-                            <input type="text" name="securityAnswer2" class="form-control" placeholder="Answer" required>
+                            <input type="text" name="securityAnswer2" class="form-control" placeholder="Answer"
+                                required>
                             <div class="invalid-feedback small-text">
                                 Please choose and answer this security question.
                             </div>
@@ -285,7 +253,8 @@ https://getbootstrap.com/docs/5.0/forms/validation/
                                     </option>
                                 </select>
                             </div>
-                            <input type="text" name="securityAnswer3" class="form-control" placeholder="Answer" required>
+                            <input type="text" name="securityAnswer3" class="form-control" placeholder="Answer"
+                                required>
                             <div class="invalid-feedback small-text">
                                 Please choose and answer this security question.
                             </div>
@@ -296,7 +265,8 @@ https://getbootstrap.com/docs/5.0/forms/validation/
                         <button type="reset" class="btn btn-secondary btn-block btn-sm"> Reset </button>
 
                         <span class="no-account small-text">
-                            <a href="index.html" title="Sign Up" id="link-have-account"> Already have an account? Sign in!</a>
+                            <a href="index.html" title="Sign Up" id="link-have-account"> Already have an account? Sign
+                                in!</a>
                         </span>
 
                     </form>
@@ -305,58 +275,111 @@ https://getbootstrap.com/docs/5.0/forms/validation/
         </div>
     </div>
 
-    <div class="flashes">
-        <% if(flashMessages) { %>
-            <% if(flashMessages.success) { %>
-                <div class="flash-success">
-                    <%= flashMessages.success %>
+    <!-- NAVBAR ACCOUNT INTERACTIONS-->
+    <div>
+        <% if (loggedIn) { %>
+            <div class="nav-item dropdown login text-right">
+                <button type="button" class="btn btn-outline-line dropdown-toggle dropdown-toggle-split"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="img/Blank_face.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="/account">Account</a>
+                    <a class="dropdown-item" href="/settings">Settings</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/logout">Sign Out</a>
                 </div>
-            <% } else if(flashMessages.error) { %>
-                <div class="flash-error">
-                    <%= flashMessages.error %>
+            </div>
+            <div class="homepageHeader mx-auto">
+                <div class="text-center">
+                    <h1> <%= currentUser.username %>'s Homepage </h1> 
                 </div>
-            <% } %>
+            </div>
+        <% } else { %>
+        <div class="btn-group login text-right">
+            <div>
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#loginModal">Log In</button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal"> Sign Up</button>
+            </div>  
+            <div class="nav-item dropdown">
+                <button type="button" class="btn btn-outline-line dropdown-toggle dropdown-toggle-split"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="img/Blank_face.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" data-toggle="modal" data-target="#loginModal"> Log in </a>
+                    <a class="dropdown-item" data-toggle="modal" data-target="#signUpModal"> Sign up </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="homepageHeader mx-auto">
+            <div class="text-center">
+                <h1> Generic Homepage </h1> 
+            </div>
+        </div>
         <% } %>
     </div>
 
-    <%- body %>
+    <!-- <div>
+        <div class="flashes">
+            <% if(flashMessages) { %>
+                <% if(flashMessages.success) { %>
+                    <div class="flash success">
+                        <%= flashMessages.success %>
+                    </div>
+                    <% } else if(flashMessages.error) { %>
+                        <div class="flash error">
+                            <%= flashMessages.error %>
+                        </div>
+                        <% } %>
+                            <% } %>
+        </div>
+
+        <%- body %>
+    </div> -->
+
 
     <footer>
 
     </footer>
 
-        <!-- Bootystrap things -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
-        <script></script>
+    <!-- Bootystrap things -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script></script>
 
-        <!-- bootstrap validation script -->
-        <script>
-            (function () {
-                'use strict';
-                window.addEventListener('load', function () {
-                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                    var forms = document.getElementsByClassName('needs-validation');
-                    // Loop over them and prevent submission
-                    var validation = Array.prototype.filter.call(forms, function (form) {
-                        form.addEventListener('submit', function (event) {
-                            if (form.checkValidity() === false) {
-                                event.preventDefault();
-                                event.stopPropagation();
-                            }
-                            form.classList.add('was-validated');
-                        }, false);
-                    });
-                }, false);
-            })();
-        </script>
+    <!-- bootstrap validation script -->
+    <script>
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
 
 </body>
 

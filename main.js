@@ -73,8 +73,11 @@ router.use((req, res, next) => {
 router.get("/", homeController.showIndex);
 
 // user routes
-router.post("/", usersController.saveUser);
-router.post("/home", usersController.logIn);
+// router.post("/", usersController.saveUser);
+
+router.post("/", usersController.authenticate);
+router.post("/signup", usersController.validate, usersController.create, usersController.redirectView);
+router.get("/logout", usersController.logout, usersController.redirectView);
 
 // other routes
 router.get("/search", homeController.showResults);
