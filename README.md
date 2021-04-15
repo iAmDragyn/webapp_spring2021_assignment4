@@ -26,7 +26,10 @@ Another notable warning is the embedded javascript using special characters that
 `<%- body %>` <br>
 <br>
 **Sources:** <br>
-COMING SOON <br>
+https://www.w3schools.com/css/css_display_visibility.asp <br>
+https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_animate-top <br>
+https://www.w3schools.com/css/css3_borders.asp <br>
+https://www.w3schools.com/css/css_align.asp <br>
 <br>
 **Instructions for running program:** Please download the code, run `npm install`, then seed the database by running `node seed.js`, then run `npm start`. <br>
 <br>
