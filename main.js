@@ -81,8 +81,8 @@ router.get("/logout", usersController.logout, usersController.redirectView);
 
 // other routes
 router.get("/search", homeController.showResults);
-router.get("/settings", homeController.showSettings);
-router.get("/account", homeController.showAccount);
+router.get("/users/settings", homeController.showSettings);
+router.get("/users/account", homeController.showAccount);
 
 // post routes
 router.get("/posts", postsController.index, postsController.indexView);

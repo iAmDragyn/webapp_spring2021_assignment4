@@ -56,8 +56,8 @@ hr {
     width: 90%; /*Takes 90% width from home-container*/
     height: auto;
     margin-top: 30px;
-    margin-left: 50px;
-    margin-left: 50px;
+    margin-left: 100px;
+    margin-left: 150px;
 }
 
 .homepageHeader {
@@ -92,19 +92,42 @@ hr {
 }
 
 .flash {
-  background: rgba(139, 139, 139, 0.7);
+  background: rgba(151, 234, 255, 0.7);
   color: #1b1b1b;
   width: 100%;
   text-align: center;
-  padding: 10px 30px;
   position: absolute;
-  top: 50px;
-  z-index: 3;
+  top: 54px;
+  z-index: 0;
+  border-radius: 25px;
+  -moz-animation: cssAnimation 0s ease-in 3s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 3s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 3s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 5s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+  to {
+      width:0;
+      height:0;
+      overflow:hidden;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+      width:0;
+      height:0;
+      visibility:hidden;
+  }
 }
 
 .login {
   position: fixed;
-  right: 10px;
+  right: 30px;
   top: 5px;
   padding: 3px;
   background: #ffffff;

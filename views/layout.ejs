@@ -22,24 +22,14 @@ https://getbootstrap.com/docs/5.0/forms/validation/
     </header>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-light navbar-expand-md justify-content-left" style="background-color: #ffffff;">
+    <nav class="navbar navbar-light navbar-expand-sm justify-content-left" style="background-color: #ffffff;">
 
         <a class="nav-link" href="#"> </a>
 
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand text-left" href="/">
             <img src="img/wink-svgrepo-com.svg" width="30" height="30" class="d-inline-block align-top" alt="">
             Let's Take a Selfie!
         </a>
-
-        <!-- Collapse button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"> </span>
-        </button>
-
-        <!-- Collapsible content -->
-        <div class="collapse navbar-collapse" id="basicExampleNav">
-        </div>
     </nav>
 
     <!-- LOG IN MODAL -->
@@ -106,7 +96,7 @@ https://getbootstrap.com/docs/5.0/forms/validation/
                         <button type="reset" class="btn btn-secondary btn-block btn-sm"> Reset </button>
 
                         <span class="no-account small-text">
-                            <a href="index.html" title="Sign Up" id="link-signup">No account? Sign up!</a>
+                            <a href="/" title="Sign Up" id="link-signup">No account? Sign up!</a>
                         </span>
 
                     </form>
@@ -265,7 +255,7 @@ https://getbootstrap.com/docs/5.0/forms/validation/
                         <button type="reset" class="btn btn-secondary btn-block btn-sm"> Reset </button>
 
                         <span class="no-account small-text">
-                            <a href="index.html" title="Sign Up" id="link-have-account"> Already have an account? Sign
+                            <a href="/" title="Sign Up" id="link-have-account"> Already have an account? Sign
                                 in!</a>
                         </span>
 
@@ -281,21 +271,18 @@ https://getbootstrap.com/docs/5.0/forms/validation/
             <div class="nav-item dropdown login text-right">
                 <button type="button" class="btn btn-outline-line dropdown-toggle dropdown-toggle-split"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= currentUser.username %>
                     <img src="img/Blank_face.svg" width="30" height="30" class="d-inline-block align-top" alt="">
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="/account">Account</a>
                     <a class="dropdown-item" href="/settings">Settings</a>
-                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-divider"> </div>
                     <a class="dropdown-item" href="/logout">Sign Out</a>
                 </div>
             </div>
-            <div class="homepageHeader mx-auto">
-                <div class="text-center">
-                    <h1> <%= currentUser.username %>'s Homepage </h1> 
-                </div>
-            </div>
+            
         <% } else { %>
         <div class="btn-group login text-right">
             <div>
@@ -316,24 +303,18 @@ https://getbootstrap.com/docs/5.0/forms/validation/
                 </div>
             </div>
         </div>
-
-        <div class="homepageHeader mx-auto">
-            <div class="text-center">
-                <h1> Generic Homepage </h1> 
-            </div>
-        </div>
         <% } %>
     </div>
 
-    <!-- <div>
-        <div class="flashes">
+    <div>
+        <div class="flashes mx-auto">
             <% if(flashMessages) { %>
                 <% if(flashMessages.success) { %>
-                    <div class="flash success">
+                    <div class="flash">
                         <%= flashMessages.success %>
                     </div>
                     <% } else if(flashMessages.error) { %>
-                        <div class="flash error">
+                        <div class="flash">
                             <%= flashMessages.error %>
                         </div>
                         <% } %>
@@ -341,7 +322,7 @@ https://getbootstrap.com/docs/5.0/forms/validation/
         </div>
 
         <%- body %>
-    </div> -->
+    </div>
 
 
     <footer>
