@@ -3,7 +3,7 @@ const Post = require("../models/post");
 module.exports = {
     index: (req, res, next) => {
         Post.find()
-            .then(courses => {
+            .then(posts => {
                 res.locals.posts= posts;
                 next();
             })
@@ -58,7 +58,7 @@ module.exports = {
     edit: (req, res, next) => {
         let postId = req.params.id;
         Post.findById(postId)
-            .then(course => {
+            .then(post => {
                 res.render("posts/edit", { post: post });
             })
             .catch(error => {
@@ -75,7 +75,7 @@ module.exports = {
         // other potential field that can be edited
 
         Post.findByIdAndUpdate(postId, updatedPost)
-        .then(course => {
+        .then(post => {
             res.locals.post = post;
             res.locals.redirect = `/posts/${post._id}`;
             next();

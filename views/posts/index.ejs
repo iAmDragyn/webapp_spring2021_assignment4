@@ -1,0 +1,42 @@
+<h2 class="center">Posts Feed</h2>
+
+<a href="/posts/new">
+    <span class="button">
+        Create new
+    </span>
+</a>
+
+<table class="table">
+    <thread>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thread>
+    <tbody>
+        <% posts.forEach(post => { %>
+            <tr>
+                <td>
+                    <a href="<%= `/posts/${post._id}` %>">
+                        <%= post.title %>
+                    </a>
+                </td>
+                <td>
+                    <%= post.description %>
+                </td>
+                <td>
+                    <a href="<%= `/posts/${post._id}/edit` %>">
+                        Edit
+                    </a>
+                </td>
+                <td>
+                    <a href="<%= `/posts/${post._id}/delete?_method=DELETE` %>" onClick="return confirm('Are you sure?')">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

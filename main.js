@@ -4,10 +4,13 @@ const express = require("express"),
     layouts = require("express-ejs-layouts"),
     mongoose = require("mongoose"),
 
+    // controllers
     homeController = require("./controllers/homeController"),
     errorController = require("./controllers/errorController"),
     usersController = require("./controllers/usersController"),
+    postsController = require("./controllers/postsController")
 
+    // dependencies
     methodOverride = require("method-override"),
     passport = require("passport"),
     cookieParser = require("cookie-parser"),
@@ -16,13 +19,14 @@ const express = require("express"),
     connectFlash = require("connect-flash"),
     User = require("./models/user");
 
-
+// mongodb things
 mongoose.connect(
     "mongodb://localhost:27017/lets_take_a_selfie",
     { useNewUrlParser: true }
 );
 mongoose.set("useCreateIndex", true);
 
+// define port
 app.set("port", process.env.PORT || 3000);
 app.set("view engine", "ejs");
 
@@ -68,12 +72,23 @@ router.use((req, res, next) => {
 
 router.get("/", homeController.showIndex);
 
+// user routes
 router.post("/", usersController.saveUser);
 router.post("/home", usersController.logIn);
 
+// other routes
 router.get("/search", homeController.showResults);
 router.get("/settings", homeController.showSettings);
 router.get("/account", homeController.showAccount);
+
+// post routes
+router.get("/posts", postsController.index, postsController.indexView);
+router.get("/posts/new", postsController.new);
+router.post("/posts/create", postsController.create, postsController.redirectView);
+router.get("/posts/:id", postsController.show, postsController.showView);
+router.get("/posts/:id/edit", postsController.edit);
+router.put("/posts/:id/update", postsController.update, postsController.redirectView);
+router.delete("/posts/:id/delete", postsController.delete, postsController.redirectView);
 
 // error handling
 router.use(errorController.pageNotFoundError);
