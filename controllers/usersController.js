@@ -9,7 +9,7 @@ const User = require("../models/user"),
             email: body.email,
             dateOfBirth: body.dateOfBirth,
             username: body.username,
-            password: body.password            
+            password: body.password
         };
     };
 
@@ -26,7 +26,6 @@ module.exports = {
             }
             else {
                 res.render("error");
-                // res.send(err);
             }
         });
     },
@@ -54,8 +53,8 @@ module.exports = {
         });
     },
 
-    create: (req,res,next) => {
-        if(req.skip) return next();
+    create: (req, res, next) => {
+        if (req.skip) return next();
 
         let userParams = getUserParams(req.body);
         let newUser = new User(userParams);
@@ -104,7 +103,7 @@ module.exports = {
                 res.send(error);
             })
     },
-    
+
     validate: (req, res, next) => {
         req.sanitizeBody("email").normalizeEmail({
             all_lowercase: true

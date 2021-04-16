@@ -1,18 +1,17 @@
-exports.showIndex = (req, res) => {
-    res.render("index")
-}
-
 // search
-exports.showResults = (req, res) => {
-    res.render("search")
-}
-
-// settings
-exports.showSettings = (req, res) => {
-    res.render("settings")
-}
-
-//account
-exports.showAccount = (req, res) => {
-    res.render("account")
+module.exports = {
+    index: (req, res) => {
+        res.render("index");
+    },
+    results: (req, res) => {
+        res.render("search");
+    },
+    // settings
+    settings: (req, res) => {
+        res.render("settings");
+    },
+    //account
+    account: (req, res) => {
+        res.render("account");
+    }
 }

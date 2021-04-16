@@ -70,19 +70,18 @@ router.use((req, res, next) => {
     next();
 })
 
-router.get("/", homeController.showIndex);
+router.get("/", postsController.index, postsController.indexView);
+app.use( express.static( "../public/img" ) );
 
 // user routes
-// router.post("/", usersController.saveUser);
-
 router.post("/", usersController.authenticate);
 router.post("/signup", usersController.validate, usersController.create, usersController.redirectView);
 router.get("/logout", usersController.logout, usersController.redirectView);
 
 // other routes
-router.get("/search", homeController.showResults);
-router.get("/users/settings", homeController.showSettings);
-router.get("/users/account", homeController.showAccount);
+router.get("/search", homeController.results);
+router.get("/settings", homeController.settings);
+router.get("/account", homeController.account);
 
 // post routes
 router.get("/posts", postsController.index, postsController.indexView);
