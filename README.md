@@ -30,6 +30,8 @@ https://www.w3schools.com/css/css_display_visibility.asp <br>
 https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_animate-top <br>
 https://www.w3schools.com/css/css3_borders.asp <br>
 https://www.w3schools.com/css/css_align.asp <br>
+https://stackoverflow.com/questions/49943610/can-i-check-password-confirmation-in-bootstrap-4-with-default-validation-options <br>
+https://getbootstrap.com/docs/5.0/forms/validation/ <br>
 <br>
 **Looking ahead:** <br>
 We plan to work on some peripheral parts of the assignment that got overshadowed by the user functions, such as epanding the account and settings pages, and getting the search functionality up and running. Ultimately, we want to let the user upload more than just text-based posts by letting them add pictures too. Comments, likes, etc are something we are deciding on for the next big update too. We also want to add more user info on posts, such as when the post was made and who it was made by. <br>
