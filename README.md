@@ -32,7 +32,7 @@ https://www.w3schools.com/css/css3_borders.asp <br>
 https://www.w3schools.com/css/css_align.asp <br>
 <br>
 **Looking ahead:** <br>
-We plan to work on some peripheral parts of the assignment that got overshadowed by the user functions, such as account page, settings page, and search functionality. Ultimately, we want to let the user upload more than just text-based posts by letting them add pictures too. Comments, likes, etc are something we are deciding on for the next big update too. We also want to add more user info on posts, such as when the post was made and who it was made by. 
+We plan to work on some peripheral parts of the assignment that got overshadowed by the user functions, such as account page, settings page, and search functionality. Ultimately, we want to let the user upload more than just text-based posts by letting them add pictures too. Comments, likes, etc are something we are deciding on for the next big update too. We also want to add more user info on posts, such as when the post was made and who it was made by. <br>
 <br>
 **Instructions for running program:** Please download the code, run `npm install`, then seed the database by running `node seed.js`, then run `npm start`. <br>
 <br>
