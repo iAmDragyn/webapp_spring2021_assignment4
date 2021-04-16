@@ -1,7 +1,7 @@
 "use strict";
 
 const mongoose = require("mongoose"),
-    User = require("./models/user");
+    User = require("./models/user"),
     Post = require("./models/post");
     
 mongoose.connect(
@@ -27,6 +27,10 @@ var contacts = [
         title: "Post 4",
         description: "Post 4 body"
     },
+    {
+        title: "Post 5",
+        description: "Post 5 body"
+    }
 ];
 
 User.deleteMany()
